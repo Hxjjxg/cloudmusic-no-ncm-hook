@@ -137,6 +137,26 @@
       const note = document.createElement("p");
       note.textContent = "记录只保存在当前页面内存中，重载后清空。已下载的 NCM 文件保持原状。";
       panel.append(note, message);
+      const links = document.createElement("p");
+      for (const [text, url] of [
+        ["源代码", "https://github.com/Hxjjxg/cloudmusic-no-ncm-hook"],
+        ["问题反馈", "https://github.com/Hxjjxg/cloudmusic-no-ncm-hook/issues"],
+      ]) {
+        const link = document.createElement("a");
+        link.textContent = text;
+        link.href = url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.style.marginRight = "16px";
+        link.addEventListener("click", async (event) => {
+          if (!root.betterncm?.ncm?.openUrl) return;
+          event.preventDefault();
+          try { await root.betterncm.ncm.openUrl(url); }
+          catch (error) { message.textContent = "打开链接失败：" + error.message; }
+        });
+        links.appendChild(link);
+      }
+      panel.appendChild(links);
       refresh();
       return panel;
     });

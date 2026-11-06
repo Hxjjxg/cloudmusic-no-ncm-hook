@@ -4,6 +4,8 @@ BetterNCM / Chromatic 插件，保留新下载歌曲的 MP3、FLAC 格式，支�
 
 已验证：Windows 网易云音乐 **3.1.5.203580**、BetterNCM **1.3.4**。其他版本尚未实测。
 
+![插件预览](plugin/preview.svg)
+
 ## 安装
 
 运行 `npm run pack`，将生成的 `dist/*.plugin` 放入 BetterNCM 数据目录的 `plugins` 文件夹，重载页面。
@@ -15,6 +17,7 @@ BetterNCM / Chromatic 插件，保留新下载歌曲的 MP3、FLAC 格式，支�
   manifest.json
   hook.js
   main.js
+  preview.svg
 ```
 
 打包版与开发版选一种安装。
@@ -65,4 +68,10 @@ npm test
 npm run pack
 ```
 
-11 项自动化测试覆盖参数处理、桥接语义、记录、生命周期和卸载共存。已完成 VIP 无损歌曲的实际下载验证，输出文件头及 STREAMINFO 确认为 FLAC；未进行整首解码校验。
+12 项自动化测试覆盖参数处理、桥接语义、记录、生命周期、卸载共存和设置页链接。已完成 VIP 无损歌曲的实际下载验证，输出文件头及 STREAMINFO 确认为 FLAC；未进行整首解码校验。
+
+## 源码与反馈
+
+[源代码](https://github.com/Hxjjxg/cloudmusic-no-ncm-hook) · [问题反馈](https://github.com/Hxjjxg/cloudmusic-no-ncm-hook/issues)
+
+思路参考 [Dir-A/CloudmusicNoNCM](https://github.com/Dir-A/CloudmusicNoNCM)。本项目使用独立的 JavaScript 桥接实现，以 GPL-3.0-only 许可证开源，见 [LICENSE](LICENSE)。

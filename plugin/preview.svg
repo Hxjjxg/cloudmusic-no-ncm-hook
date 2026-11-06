@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1">
+      <stop stop-color="#12262a"/>
+      <stop offset="1" stop-color="#10171f"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" rx="28" fill="url(#bg)"/>
+  <circle cx="860" cy="65" r="180" fill="#65e3bd" opacity=".04"/>
+  <g font-family="Segoe UI,Microsoft YaHei,sans-serif">
+    <rect x="58" y="54" width="152" height="30" rx="15" fill="#65e3bd" fill-opacity=".12"/>
+    <text x="78" y="75" fill="#80e9c8" font-size="15">BetterNCM Plugin</text>
+    <text x="58" y="154" fill="#f1f7f5" font-size="49" font-weight="700">CloudmusicNoNCM JS</text>
+    <text x="60" y="203" fill="#b0c3c1" font-size="25">让下载回归原始音质</text>
+    <rect x="60" y="258" width="405" height="151" rx="20" fill="#1d3237"/>
+    <rect x="489" y="258" width="411" height="151" rx="20" fill="#1d3237"/>
+    <path d="M92 289v35m-10-10 10 10 10-10m-23 20h26" stroke="#80e9c8" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="124" y="321" fill="#f1f7f5" font-size="32" font-weight="600">MP3 / FLAC</text>
+    <text x="87" y="374" fill="#a9bfbc" font-size="20">保留原始格式与歌曲元数据</text>
+    <path d="m526 306 7-7a8 8 0 0 1 12 12l-7 7m-7-4-7 7a8 8 0 0 1-12-12l7-7m2 13 14-14" stroke="#80e9c8" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <text x="562" y="321" fill="#f1f7f5" font-size="29" font-weight="600">音频直链记录</text>
+    <text x="516" y="374" fill="#a9bfbc" font-size="20">本地记录 · 一键导出 JSON</text>
+    <text x="60" y="478" fill="#748e8c" font-size="17">Hxjjxg · 开源 JavaScript 插件</text>
+    <path d="m777 465 9 17 10-28 10 37 10-26 10 16 10-13 10 5 10-8 10 10 10-4" fill="none" stroke="#65e3bd" stroke-width="2" opacity=".6"/>
+  </g>
+</svg>

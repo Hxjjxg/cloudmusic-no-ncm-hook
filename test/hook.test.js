@@ -173,3 +173,42 @@ test('manifest Main injection files exist in the declared order', () => {
   assert.deepEqual(manifest.injects.Main.map(x => x.file), ['hook.js', 'main.js']);
   for (const { file } of manifest.injects.Main) assert.ok(fs.existsSync(require.resolve('../plugin/' + file)));
 });
+
+test('settings expose source and feedback links through the external-browser API', async () => {
+  class Element {
+    constructor(tag) { this.tag = tag; this.style = {}; this.children = []; this.listeners = {}; }
+    appendChild(child) { this.children.push(child); }
+    append(...children) { this.children.push(...children); }
+    addEventListener(event, callback) { this.listeners[event] = callback; }
+  }
+  const callbacks = {};
+  const opened = [];
+  const context = vm.createContext({
+    channel: { call() {} }, console, setInterval, clearInterval,
+    addEventListener() {}, removeEventListener() {},
+    document: { createElement: tag => new Element(tag), createTextNode: text => ({ text }) },
+    betterncm: { ncm: { openUrl: async url => { opened.push(url); } } },
+    plugin: {
+      onLoad(fn) { callbacks.load = fn; }, onConfig(fn) { callbacks.config = fn; },
+      getConfig(key, fallback) { return fallback; }, setConfig() {},
+    },
+  });
+  vm.runInContext(fs.readFileSync(require.resolve('../plugin/hook.js'), 'utf8') + '\n' +
+    fs.readFileSync(require.resolve('../plugin/main.js'), 'utf8'), context);
+  callbacks.load();
+  try {
+    const panel = callbacks.config();
+    const flatten = node => [node, ...(node.children || []).flatMap(flatten)];
+    const links = flatten(panel).filter(node => node.tag === 'a');
+    assert.deepEqual(links.map(link => link.textContent), ['源代码', '问题反馈']);
+    let prevented = 0;
+    for (const link of links) await link.listeners.click({ preventDefault() { prevented++; } });
+    assert.equal(prevented, 2);
+    assert.deepEqual(opened, [
+      'https://github.com/Hxjjxg/cloudmusic-no-ncm-hook',
+      'https://github.com/Hxjjxg/cloudmusic-no-ncm-hook/issues',
+    ]);
+  } finally {
+    context.cloudmusicNoNCM.dispose();
+  }
+});
