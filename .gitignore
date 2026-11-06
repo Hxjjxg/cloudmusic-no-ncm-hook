@@ -1,0 +1,14 @@
+# Build output and dependencies
+/dist/
+/node_modules/
+*.plugin
+*.zip
+
+# Local captures, exported URLs and audio files
+/captures/
+/download-records.json
+/cloudmusic-no-ncm-*.json
+*.mp3
+*.flac
+*.ncm
+*.log
