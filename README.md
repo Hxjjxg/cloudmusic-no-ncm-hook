@@ -1,8 +1,8 @@
-# CloudmusicNoNCM JS
+# Fuck-NCM-Wrapper JS
 
 BetterNCM / Chromatic 插件，保留新下载歌曲的 MP3、FLAC 格式，支持下载链接记录和 JSON 导出。
 
-已验证：Windows 网易云音乐 **3.1.5.203580**、**3.1.43.205627**，BetterNCM **1.3.4**。声明兼容范围为 3.1.5–3.1.43，范围内其他版本尚未逐一实测。
+已在 Windows 网易云音乐 **3.0.0**、**3.0.5**、**3.0.19** 和 **3.1.43** 上测试。插件声明兼容范围为 **>=3.0.0**。
 
 ![插件预览](plugin/preview.svg)
 
