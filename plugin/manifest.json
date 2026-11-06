@@ -3,14 +3,14 @@
   "manifest_version": 1,
   "name": "CloudmusicNoNCM JS",
   "slug": "cloudmusic-no-ncm-js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "betterncm_version": ">=1.3.0",
   "author": "Hxjjxg",
   "author_link": "https://github.com/Hxjjxg",
   "description": "让下载回归原始音质：保留 MP3、FLAC 格式，支持音频直链记录与导出。",
   "preview": "preview.svg",
   "ncm3-compatible": true,
-  "ncm-version-req": "=3.1.5",
+  "ncm-version-req": ">=3.1.5 <=3.1.43",
   "type": "extension",
   "injects": {
     "Main": [

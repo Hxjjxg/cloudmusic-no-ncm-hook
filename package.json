@@ -1,11 +1,11 @@
 {
   "name": "cloudmusic-no-ncm-hook",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "license": "GPL-3.0-only",
   "description": "BetterNCM / Chromatic JS bridge hook for original MP3 and FLAC downloads",
   "scripts": {
-    "test": "node --test",
+    "test": "node --test test/*.test.js",
     "check": "node --check plugin/hook.js && node --check plugin/main.js && node --check scripts/cdp.mjs",
     "pack": "powershell -NoProfile -File scripts/pack.ps1"
   }
